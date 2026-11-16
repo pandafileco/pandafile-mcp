@@ -1,0 +1,40 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.pandafileco/pandafile-mcp",
+  "title": "Pandafile",
+  "description": "Send big files and folders with a link, manage transfers and file requests on pandafile.co.",
+  "version": "0.1.0",
+  "websiteUrl": "https://pandafile.co/developers/mcp",
+  "repository": {
+    "url": "https://github.com/pandafileco/pandafile-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@pandafile/mcp",
+      "version": "0.1.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "PANDAFILE_API_KEY",
+          "description": "Pandafile API key (pf_live_… or pf_test_… for test mode). Create one in Dashboard → Domain & API (Pro or Team).",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "PANDAFILE_BASE_URL",
+          "description": "API base URL (default https://pandafile.co/api/v1). Only for testing.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

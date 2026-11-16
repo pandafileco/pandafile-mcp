@@ -1,0 +1,60 @@
+{
+  "name": "@pandafile/mcp",
+  "version": "0.1.0",
+  "description": "Official Pandafile MCP server: let AI agents (Claude, Cursor, ChatGPT, VS Code, …) send big files and manage transfers and file requests with pandafile.co.",
+  "mcpName": "io.github.pandafileco/pandafile-mcp",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "pandafile",
+    "file transfer",
+    "large files",
+    "send files",
+    "ai agents",
+    "claude"
+  ],
+  "homepage": "https://pandafile.co/developers/mcp",
+  "bugs": {
+    "url": "https://github.com/pandafileco/pandafile-mcp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pandafileco/pandafile-mcp.git"
+  },
+  "license": "MIT",
+  "author": "3XAYA LTD (https://pandafile.co)",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./src/server.js",
+  "exports": {
+    ".": "./src/server.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "pandafile-mcp": "./bin/pandafile-mcp.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "server.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node bin/pandafile-mcp.js",
+    "test": "node --test \"tests/*.spec.mjs\"",
+    "test:e2e": "node ../integration/mcp.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@pandafile/sdk": "^0.2.0",
+    "zod": "^4.6.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
